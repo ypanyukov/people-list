@@ -1,0 +1,33 @@
+<link rel='stylesheet' href='css/people-list.css'/>
+<div class='people-list' ng-controller='PeopleListCtrl'>
+        
+    <div class='people-list-search-block'>
+        Search: <input ng-model='query'>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th class='people-list-head-item' ng-repeat='headItem in data.colNames | orderBy:predicate:reverse'>
+                    <a href=''ng-click='peopleOrderBy(headItem.key, !reversed)'>{{headItem.item}}</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='people-list-item' ng-repeat='item in data.result | filter:query | orderBy:peoplePredicate:reversed' id='{{item.id}}'>
+                <td><a href='#/user/{{item.id}}'>{{item.id}}</a></td>
+                <td><a href='#/user/{{item.id}}'><img src='{{item.picture}}' width='20'></a></td>
+                <td><a href='#/user/{{item.id}}'>{{item.name}}</a></td>
+                <td><a href='#/users/{{item.age}}'>{{item.age}}</a></td>
+                <td><a href='#/users/{{item.gender}}'>{{item.gender}}</a></td>
+                <td>{{item.company}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.email}}</td>
+                <td><a href='#/user/{{item.id}}'>{{item.guid}}</a></td>
+                <td>
+                    <div class='people-list-item-about'>{{item.about}}</div>
+                </td>
+            </tr>
+        </tbody>            
+    </table>
+</div>

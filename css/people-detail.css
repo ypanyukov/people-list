@@ -1,0 +1,66 @@
+.people-detail {
+    font-size:14px;
+    color:gray;
+    max-width:1200px;
+    margin: 0 auto;
+    overflow:hidden;
+    
+    border:1px solid gray;
+    border-radius:3px;
+}
+
+.people-detail .people-detail-header {
+    padding:5px;
+    background-color:gray;
+    color:white;
+}
+
+.people-detail .people-detail-header .people-detail-id {
+    font-size:10px;
+    margin-left:7px;
+}
+
+.people-detail .people-detail-header .people-detail-return-to-list, .people-detail .people-detail-header .people-detail-return-to-list:hover {
+    float:right;
+    margin-right:15px;
+    color:white;
+}
+
+.people-detail .people-detail-picture {
+    float:left;
+    width:600px;
+}
+
+.people-detail .people-detail-picture img {
+    float:left;
+    border:1px solid #C4CCDF;
+    margin:40px;
+}
+
+.people-detail .people-detail-information {
+    float:right;
+    width:600px;
+}
+
+.people-detail .people-detail-information-inner {    
+    margin:40px 20px 40px 0;
+}
+
+.people-detail .people-detail-information-inner .people-detail-information-item {    
+    margin-bottom:10px;
+    border-bottom:1px solid gray;
+    padding-bottom:5px;
+    overflow:hidden;
+}
+
+.people-detail .people-detail-information-inner .people-detail-information-item .people-detail-information-item-description {    
+    float:left;
+    text-align:right;
+    width:60px;
+    margin-right:10px;
+}
+
+.people-detail .people-detail-information-inner .people-detail-information-item .people-detail-information-item-value {    
+    float:right;
+    width:500px;
+}

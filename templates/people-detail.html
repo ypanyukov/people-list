@@ -1,0 +1,20 @@
+<link rel='stylesheet' href='css/people-detail.css'/>
+<div class='people-detail' ng-controller='PeopleDetailCtrl'>
+    <div class='people-detail-header'>
+        <div class='people-detail-name'>
+            {{data.name}}<span class='people-detail-id'>#{{data.id}}</span>
+            <a href='#/users' class='people-detail-return-to-list'>Back to list</a>
+        </div>
+    </div>
+    <div class='people-detail-picture'>
+        <img src='{{data.picture_big}}' width='500'>
+    </div>
+    <div class='people-detail-information'>
+        <div class='people-detail-information-inner'>
+            <div class='people-detail-information-item' ng-repeat='col in detailCols | orderBy:detailColsPredicate'>
+                <span class='people-detail-information-item-description'>{{col.item}}</span>
+                <span class='people-detail-information-item-value'>{{data[col.key]}}</span>
+            </div>
+        </div>
+    </div>    
+</div>
