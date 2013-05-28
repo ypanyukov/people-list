@@ -1,12 +1,14 @@
-var PeopleListCtrl = function($scope, $http) {
-    $http.get('data.json').success(function(data) {
-        if (data.result)
-            $scope.data = data;
-            
-        $scope.predicate = "sort";
-        $scope.peoplePredicate = "age";
-        $scope.reversed = true;
-    });
+var PeopleListCtrl = function($scope, $routeParams, People, Cols, $http) {
+    
+    $scope.data = People.query();
+    $scope.cols = Cols.query();
+    
+    $scope.peoplePredicate = "age";
+    $scope.reversed = true;
+    $scope.predicate = "sort";
+    
+   
+     $scope.isSearch = $routeParams.type ? true : false;
     
     $scope.peopleOrderBy = function(val, sort){
         $scope.peoplePredicate = val;
@@ -14,21 +16,24 @@ var PeopleListCtrl = function($scope, $http) {
     };
 };
 
-var PeopleDetailCtrl = function($scope, $routeParams, $http, $location){
+var PeopleDetailCtrl = function($scope, $routeParams, People, Cols, $location){
     var find = false;
     
-    $http.get('data.json').success(function(data) {
-        data.result.forEach(function(item){
+    People.query(function(data) {
+        data.forEach(function(item){
             if (item.id == $routeParams.userId){
                 find = true;
                 $scope.data = item;
-                
-                $scope.detailCols = data.detailCols;
-                $scope.detailColsPredicate = "sort";
             }
         });
         
         if (!find)
             $location.path('/users');
     });
+        
+    Cols.query(function(data){
+        $scope.detailCols = data.detailCols;
+    });
+    
+    $scope.detailColsPredicate = "sort";
 };

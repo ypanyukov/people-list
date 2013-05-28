@@ -1,0 +1,24 @@
+{
+    "detailCols": [
+        { "key": "guid", "item": "GUID", "sort":7},
+        { "key": "age", "item": "Age", "sort":2},
+        { "key": "name", "item": "Name", "sort":1},
+        { "key": "gender", "item": "Gender", "sort":3},
+        { "key": "company", "item": "Company", "sort":4},
+        { "key": "phone", "item": "Phone", "sort":5},
+        { "key": "email", "item": "email", "sort":6},
+        { "key": "about", "item": "About", "sort":8}
+    ],
+    "colNames": [
+        { "key": "id", "item": "#", "sort":1},
+        { "key": "guid", "item": "GUID", "sort":9},
+        { "key": "age", "item": "Age", "sort":4},
+        { "key": "name", "item": "Name", "sort":3},
+        { "key": "gender", "item": "Gender", "sort":5},
+        { "key": "picture", "item": "Picture", "sort":2},
+        { "key": "company", "item": "Company", "sort":6},
+        { "key": "phone", "item": "Phone", "sort":7},
+        { "key": "email", "item": "email", "sort":8},
+        { "key": "about", "item": "About", "sort":10}
+    ]
+}
